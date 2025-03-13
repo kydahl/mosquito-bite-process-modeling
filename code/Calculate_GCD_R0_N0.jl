@@ -9,7 +9,7 @@ using CSV
 using ProgressBars
 
 # Load parameters
-include("Calculate_GCD_R0_N0.jl")
+include("Parameters.jl")
 
 # Define output functions
 

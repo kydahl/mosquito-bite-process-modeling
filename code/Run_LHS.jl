@@ -1,4 +1,5 @@
 # Set up PRCC analysis
+
 include("Calculate_GCD_R0_N0.jl")
 
 # Parameters for the `flighty' and `persistent' mosquito data sets
@@ -85,7 +86,7 @@ all_results = vcat(max_results) #, flighty_results, persistent_results)
 # Save outputs ----
 # Parameter grid and outputs
 using CodecZlib
-open(joinpath(dirname(dirname(pwd())), "data", "LHS_samples.csv.gz"), "w") do io
+open(joinpath(pwd(), "data", "LHS_samples.csv.gz"), "w") do io
     gzip_io = GzipCompressorStream(io)
     CSV.write(gzip_io, all_results)
     close(gzip_io)

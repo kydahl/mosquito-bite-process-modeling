@@ -507,7 +507,7 @@ ggsave("figures/Figure6.pdf", shift_legend(Figure6), width = 6.5, height = 2.25 
 # Figure 7. PRCCs of R0 against mechanistic parameters ----
 
 # Set this to TRUE to calculate the PRCC values from the LHS samples produced by the Julia code
-calculate_PRCCs_bool = FALSE
+calculate_PRCCs_bool = TRUE
 
 if (calculate_PRCCs_bool) {
   # Load in data
