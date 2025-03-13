@@ -1,0 +1,1 @@
+# Parameters for calculating GCD, R0, N0
