@@ -91,34 +91,21 @@
 \lang english
 \begin_inset Formula 
 \begin{align*}
-p_{X}\left(d\right) & =\bar{p}_{X}\left(1-\frac{a_{X}d^{r_{X}}}{1+a_{X}b_{X}d^{r_{X}}}\right)\\
-d\left(B\right) & =\frac{a_{d}B^{r_{d}}}{1+a_{d}b_{d}B^{r_{d}}},
+d\left(B\right) & =d_{\max}\frac{a_{d}B^{r_{d}}}{d_{\max}+a_{d}B^{r_{d}}},\\
+p_{X}\left(d\right) & =\bar{p}_{X}\left(1-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\frac{d^{r_{X}}}{d^{r_{X}}+a_{X}\left(d_{\max}-d\right)^{r_{X}}}\right)\\
+\\\\p_{X}\left(d\right) & =\frac{p_{\min}d^{r_{X}}+\bar{p}_{X}a_{X}\left(d_{\max}-d\right)^{r_{X}}}{d^{r_{X}}+a_{X}\left(d_{\max}-d\right)^{r_{X}}}\\
+p_{X}\left(d\right) & =p_{\min}\left(\frac{d^{r_{X}}}{d^{r_{X}}+a_{X}\left(d_{\max}-d\right)^{r_{X}}}\right)+\bar{p}_{X}\left(\frac{a_{X}\left(d_{\max}-d\right)^{r_{X}}}{d^{r_{X}}+a_{X}\left(d_{\max}-d\right)^{r_{X}}}\right)
 \end{align*}
 
 \end_inset
 
 
 \lang american
-Let 
+Set 
 \begin_inset Formula $d_{\max}$
 \end_inset
 
- denote the highest level of defensiveness attained and note that 
-\begin_inset Formula $b_{d}=\frac{1}{d_{\max}}$
-\end_inset
-
-,
- so 
-\begin_inset Formula $b_{d}$
-\end_inset
-
- is known.
- Without loss of generality,
- set 
-\begin_inset Formula $d_{\max}=1$
-\end_inset
-
-.
+ to denote the highest level of defensiveness attained.
 \begin_inset Newline newline
 \end_inset
 
@@ -128,35 +115,30 @@ Let
 
  denote the level of mosquito density at which defensiveness is half its maximum,
  
-\begin_inset Formula $d\left(B_{1/2}\right)=d_{1/2}=\frac{1}{2}d_{\max}=\frac{1}{2b_{d}}$
+\begin_inset Formula $d\left(B_{1/2}\right)=d_{1/2}$
 \end_inset
 
 .
 \begin_inset Formula 
 \begin{align*}
 d\left(B_{1/2}\right) & =\frac{1}{2}d_{\max}\\
-\frac{a_{d}B_{1/2}^{r_{d}}}{1+a_{d}b_{d}B_{1/2}^{r_{d}}} & =\frac{1}{2}d_{\max}\\
-a_{d}B_{1/2}^{r_{d}} & =\frac{1}{2}d_{\max}\left(1+a_{d}b_{d}B_{1/2}^{r_{d}}\right)\\
-a_{d}B_{1/2}^{r_{d}}-\frac{1}{2}a_{d}B_{1/2}^{r_{d}} & =\frac{1}{2}d_{\max}\\
-a_{d}\left(r_{d}\right) & =d_{\max}B_{1/2}^{-r_{d}}
+d_{\max}\frac{a_{d}B_{1/2}^{r_{d}}}{d_{\max}+a_{d}B_{1/2}^{r_{d}}} & =\frac{1}{2}d_{\max}\\
+a_{d}B_{1/2}^{r_{d}} & =d_{\max}\\
+a_{d} & =d_{\max}B_{1/2}^{-r_{d}}\\
 \end{align*}
 
 \end_inset
 
-So 
-\begin_inset Formula $a_{d}$
-\end_inset
 
- is known once 
-\begin_inset Formula $r_{d}$
-\end_inset
+\begin_inset Formula 
+\begin{align*}
+d\left(B\right) & =d_{\max}\left(\frac{B^{r_{d}}}{B_{1/2}^{r_{d}}+B^{r_{d}}}\right)
+\end{align*}
 
- is.
-\begin_inset Newline newline
 \end_inset
 
 Let 
-\begin_inset Formula $d_{1/2}$
+\begin_inset Formula $d_{1/2}=\frac{1}{2}d_{\max}$
 \end_inset
 
  be the value of defensiveness at which 
@@ -169,79 +151,86 @@ Let
 \end_inset
 
 .
- Assume that 
-\begin_inset Formula $d\left(B_{1/2}\right)=d_{1/2}$
-\end_inset
-
-.
- That is,
- it coincides with half the maximum value of 
-\begin_inset Formula $d$
-\end_inset
-
-.
+ 
 \begin_inset Formula 
 \begin{align*}
 p_{X}\left(d_{1/2}\right) & =\frac{1}{2}\bar{p}_{X}\\
-p_{X}\left(\frac{1}{2}d_{\max}\right) & =\frac{1}{2}\bar{p}_{X}\\
-\bar{p}_{X}\left(1-\frac{a_{X}\left(\frac{1}{2}d_{\max}\right)^{r_{X}}}{1+a_{X}b_{X}\left(\frac{1}{2}d_{\max}\right)^{r_{X}}}\right) & =\frac{1}{2}\bar{p}_{X}\\
-\frac{a_{X}\left(\frac{1}{2}d_{\max}\right)^{r_{X}}}{1+a_{X}b_{X}\left(\frac{1}{2}d_{\max}\right)^{r_{X}}} & =\frac{1}{2}\\
-a_{X}\left(2-b_{X}\right)\left(\frac{1}{2}d_{\max}\right)^{r_{X}} & =1\\
-a_{X}\left(b_{X},r_{X}\right) & =\left(2-b_{X}\right)^{-1}\left(\frac{1}{2}d_{\max}\right)^{-r_{X}}
+\bar{p}_{X}\left(1-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\frac{2^{-r_{X}}\left(d_{\max}^{r_{X}}\right)}{2^{-r_{X}}\left(d_{\max}^{r_{X}}\right)+a_{X}b_{X}2^{-r_{X}}\left(d_{\max}^{r_{X}}\right)}\right) & =\frac{1}{2}\bar{p}_{X}\\
+\bar{p}_{X}\left(1-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\frac{1}{1+a_{X}b_{X}}\right) & =\frac{1}{2}\bar{p}_{X}\\
+a_{X} & =\frac{2}{\bar{p}_{X}}\left(\frac{\bar{p}_{X}}{2}-p_{\min}\right)
 \end{align*}
 
 \end_inset
 
-Let 
+
+\begin_inset Formula 
+\begin{align*}
+p_{X}\left(d\right) & =\bar{p}_{X}\left(1-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\frac{\frac{1}{2}\bar{p}_{X}d^{r_{X}}}{\frac{1}{2}\bar{p}_{X}d^{r_{X}}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)\left(d_{\max}-d\right)^{r_{X}}}\right)\\
+p_{X}\left(d\right) & =\bar{p}_{X}\left(\frac{\frac{1}{2}p_{\min}d^{r_{X}}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)\left(d_{\max}-d\right)^{r_{X}}}{\frac{1}{2}\bar{p}_{X}d^{r_{X}}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)\left(d_{\max}-d\right)^{r_{X}}}\right)\\
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+p_{X}\left(0\right) & =\bar{p}_{X}\\
+p_{X}\left(0\right) & =\bar{p}_{X}\\
+\\\\p_{X}\left(d_{1/2}\right) & =\frac{1}{2}\bar{p}_{X}\\
+p_{X}\left(\frac{1}{2}d_{\max}\right) & =\bar{p}_{X}\left(\frac{1}{2}\frac{\left(\bar{p}_{X}-\frac{1}{2}p_{\min}\right)}{\bar{p}_{X}-p_{\min}}\right)\\
+\\\\p_{X}\left(d_{\max}\right) & =p_{\min}
+\end{align*}
+
+\end_inset
+
+Note that 
 \begin_inset Formula $p_{\min}$
 \end_inset
 
- be the smallest value of 
+ is the smallest value of 
 \begin_inset Formula $p_{X}$
 \end_inset
 
  attained.
- It must coincide with the largest value attained by 
-\begin_inset Formula $d$
-\end_inset
-
-.
- That is,
  
-\begin_inset Formula $p_{\min}=p_{X}\left(d_{\max}\right)$
-\end_inset
-
- where 
-\begin_inset Formula $d_{\max}=\frac{1}{b_{d}}$
-\end_inset
-
-.
 \begin_inset Formula 
 \begin{align*}
-p_{\min} & =p_{X}\left(d_{\max}\right)\\
-p_{\min} & =\bar{p}_{X}\left(1-\frac{a_{X}d_{\max}^{r_{X}}}{1+a_{X}b_{X}d_{\max}^{r_{X}}}\right)\\
-\frac{a_{X}d_{\max}^{r_{X}}}{1+a_{X}b_{X}d_{\max}^{r_{X}}} & =1-\frac{p_{\min}}{\bar{p}_{X}}\\
-a_{X}d_{\max}^{r_{X}} & =\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\left(1+a_{X}b_{X}d_{\max}^{r_{X}}\right)\\
-a_{X}d_{\max}^{r_{X}}\left[1-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)b_{X}\right] & =\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\\
-1-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)b_{X} & =\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\left(\frac{1}{2}d_{\max}\right)^{r_{X}}d_{\max}^{-r_{X}}\left(2-b_{X}\right)\\
-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)\left(2^{-r_{X}}-1\right)b_{X} & =2^{1-r_{X}}\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)-1\\
-b_{X}\left(r_{X}\right) & =\left(2^{-r_{X}}-1\right)^{-1}\left[2^{1-r_{X}}-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)^{-1}\right]\\
-b_{X}\left(r_{X}\right) & =1-\left(2^{-r_{X}}-1\right)^{-1}\left(\frac{p_{\min}}{\bar{p}_{X}-p_{\min}}\right)\\
-\\\\
+d\left(B\right) & =d_{\max}\left(\frac{B^{r_{d}}}{B_{1/2}^{r_{d}}+B^{r_{d}}}\right)
 \end{align*}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-a_{X}\left(b_{X},r_{X}\right) & =2^{r_{X}}\left\{ 1+\left(2^{-r_{X}}-1\right)^{-1}\left(\frac{p_{\min}}{\bar{p}_{X}-p_{\min}}\right)\right\} ^{-1}\\
-a_{X}\left(r_{X}\right) & =2^{r_{X}}\frac{1}{1+\left(2^{-r_{X}}-1\right)^{-1}\frac{p_{\min}}{\bar{p}_{X}-p_{\min}}}
+p_{X}\left(B\right) & =\bar{p}_{X}\left(\frac{\frac{1}{2}p_{\min}\left(d_{\max}\left(\frac{B^{r_{d}}}{B_{1/2}^{r_{d}}+B^{r_{d}}}\right)\right)^{r_{X}}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)\left(d_{\max}-d_{\max}\left(\frac{B^{r_{d}}}{B_{1/2}^{r_{d}}+B^{r_{d}}}\right)\right)^{r_{X}}}{\frac{1}{2}\bar{p}_{X}\left(d_{\max}\left(\frac{B^{r_{d}}}{B_{1/2}^{r_{d}}+B^{r_{d}}}\right)\right)^{r_{X}}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)\left(d_{\max}-d_{\max}\left(\frac{B^{r_{d}}}{B_{1/2}^{r_{d}}+B^{r_{d}}}\right)\right)^{r_{X}}}\right)\\
+p_{X}\left(B\right) & =\bar{p}_{X}\left(\frac{\frac{1}{2}p_{\min}\left(B^{r_{d}}\right)^{r_{X}}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)\left(B_{1/2}^{r_{d}}\right)^{r_{X}}}{\frac{1}{2}\bar{p}_{X}\left(B^{r_{d}}\right)^{r_{X}}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)\left(B_{1/2}^{r_{d}}\right)^{r_{X}}}\right)\\
+p_{X}\left(B\right) & =\bar{p}_{X}\left(\frac{\frac{1}{2}p_{\min}B^{r}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)B_{1/2}^{r}}{\frac{1}{2}\bar{p}_{X}B^{r}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)B_{1/2}^{r}}\right)\\
+p_{X}\left(B\right) & =\bar{p}_{X}\left(1-\frac{\frac{1}{2}\left(\bar{p}_{X}-p_{\min}\right)B^{r}}{\frac{1}{2}\bar{p}_{X}B^{r}+\left(\frac{1}{2}\bar{p}_{X}-p_{\min}\right)B_{1/2}^{r}}\right)\\
+p_{X}\left(B\right) & =\bar{p}_{X}\left(1-\frac{\left(\bar{p}_{X}-p_{\min}\right)B^{r}}{\left(\bar{p}_{X}-p_{\min}\right)\left(B^{r}+B_{1/2}^{r}\right)+p_{\min}\left(B^{r}-B_{1/2}^{r}\right)}\right)\\
+p_{X}\left(B\right) & =\bar{p}_{X}\frac{\left(\bar{p}_{X}-p_{\min}\right)B_{1/2}^{r}+p_{\min}\left(B^{r}-B_{1/2}^{r}\right)}{\left(\bar{p}_{X}-p_{\min}\right)\left(B^{r}+B_{1/2}^{r}\right)+p_{\min}\left(B^{r}-B_{1/2}^{r}\right)}
 \end{align*}
 
 \end_inset
 
-Assuming that 
+where 
+\begin_inset Formula $r=r_{d}r_{X}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+Special case:
+ Assuming that 
+\begin_inset Formula $d_{\max}=1$
+\end_inset
+
+,
+ 
 \begin_inset Formula $p_{\min}=0$
 \end_inset
 
@@ -249,102 +238,13 @@ Assuming that
 \begin_inset Formula $\bar{p}_{X}=1$
 \end_inset
 
-.
-\begin_inset Formula 
-\begin{align*}
-p_{\min} & =p_{X}\left(1\right)\\
-\frac{a_{X}}{1+a_{X}b_{X}} & =1\\
-a_{X} & =1+a_{X}b_{X}\\
-a_{X} & =1/\left(1-b_{X}\right)
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Formula 
-\begin{align*}
-p_{X}\left(d_{1/2}\right) & =\frac{1}{2}\\
-p_{X}\left(\frac{1}{2}\right) & =\frac{1}{2}\\
-1-\frac{a_{X}\left(\frac{1}{2}\right)^{r_{X}}}{1+a_{X}b_{X}\left(\frac{1}{2}\right)^{r_{X}}} & =\frac{1}{2}\\
-a_{X}2^{1-r_{X}} & =1+a_{X}b_{X}2^{-r_{X}}\\
-a_{X}2^{-r_{X}}\left(2-b_{X}\right) & =1\\
-b_{X} & =2-\frac{1}{a_{X}}2^{r_{X}}\\
-b_{X} & =2-2^{r_{X}}+b_{X}2^{r_{X}}\\
-b_{X}-2^{r_{X}}b_{X} & =2-2^{r_{X}}\\
-\\a_{X}\left(2-b_{X}\right)\left(\frac{1}{2}d_{\max}\right)^{r_{X}} & =1\\
-a_{X}\left(b_{X},r_{X}\right) & =\left(2-b_{X}\right)^{-1}\left(\frac{1}{2}d_{\max}\right)^{-r_{X}}
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Formula 
-\begin{align*}
-a_{X}\left(r_{X}\right) & =\left(2-b_{X}\left(r_{X}\right)\right)^{-1}\left(\frac{1}{2}d_{\max}\right)^{-r_{X}}\\
-a_{X}\left(r_{X}\right) & =\left(2-b_{X}\left(r_{X}\right)\right)^{-1}2^{r_{X}}\\
-a_{X}\left(r_{X}\right) & =\left(2-\left(2^{-r_{X}}-1\right)^{-1}\left[2^{1-r_{X}}-\left(1-\frac{p_{\min}}{\bar{p}_{X}}\right)^{-1}\right]\right)^{-1}2^{r_{X}}
-\end{align*}
-
-\end_inset
-
-
+,
+ we obtain
 \begin_inset Formula 
 \[
-b_{X}\left(r_{X}\right)=1
+p_{X}\left(B\right)=\frac{B_{1/2}^{r}}{B^{r}+B_{1/2}^{r}}
 \]
 
-\end_inset
-
-
-\begin_inset Formula 
-\[
-a_{X}\left(r_{X}\right)=2^{r_{X}}
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\begin{align*}
-p_{X}\left(d\right) & =\bar{p}_{X}\left(1-\frac{2^{r_{X}}d^{r_{X}}}{1+2^{r_{X}}d^{r_{X}}}\right)\\
-p_{X}\left(d\right) & =\frac{\bar{p}_{X}}{1+\left(2d\right)^{r_{X}}}
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-d\left(B\right)=\frac{\left(B/B_{1/2}\right)^{r_{d}}}{1+\left(B/B_{1/2}\right)^{r_{d}}},
-\]
-
-\end_inset
-
-
-\begin_inset Formula 
-\begin{align*}
-p_{X}\left(B\right) & =\frac{\bar{p}_{X}}{1+\left(2\frac{\left(B/B_{1/2}\right)^{r_{d}}}{1+\left(B/B_{1/2}\right)^{r_{d}}}\right)^{r_{X}}}\\
-p_{X}\left(B\right) & =\frac{\bar{p}_{X}}{1+\left(\frac{2\left(B/B_{1/2}\right)^{r_{d}}}{1+\left(B/B_{1/2}\right)^{r_{d}}}\right)^{r_{X}}}\frac{\left(1+\left(B/B_{1/2}\right)^{r_{d}}\right)^{r_{X}}}{\left(1+\left(B/B_{1/2}\right)^{r_{d}}\right)^{r_{X}}}\\
-p_{X}\left(B\right) & =\bar{p}_{X}\frac{\left[1+\left(B/B_{1/2}\right)^{r_{d}}\right]^{r_{X}}}{\left[1+\left(B/B_{1/2}\right)^{r_{d}}\right]^{r_{X}}+2^{r_{X}}\left(B/B_{1/2}\right)^{r_{d}r_{X}}}\\
-p_{X}\left(B\right) & =\bar{p}_{X}\frac{\left[1+B_{1/2}^{-r_{d}}B^{r_{d}}\right]^{r_{X}}}{\left[1+B_{1/2}^{-r_{d}}B^{r_{d}}\right]^{r_{X}}+2^{r_{X}}B_{1/2}^{-r_{d}r_{X}}B^{r_{d}r_{X}}}\\
-p_{X}\left(B\right) & =\bar{p}_{X}\frac{\left(1+a_{d}B^{r_{d}}\right)^{r_{X}}}{\left(1+a_{d}B^{r_{d}}\right)^{r_{X}}+\left(2a_{d}B^{r_{d}}\right)^{r_{X}}}
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Formula 
-\begin{align*}
-\frac{a_{X}d_{\max}^{r_{X}}}{1+a_{X}b_{X}d_{\max}^{r_{X}}} & =1\\
-a_{X}d_{\max}^{r_{X}} & =1+a_{X}b_{X}d_{\max}^{r_{X}}\\
-\left(1-b_{X}\right)a_{X} & =1\\
-a_{X} & =1/\left(1-b_{X}\right)
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 
